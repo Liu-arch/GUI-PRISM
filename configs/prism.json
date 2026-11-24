@@ -1,0 +1,88 @@
+{
+  "seed": 42,
+  "head": {
+    "input_dim": 4096,
+    "hidden_dim": 1024,
+    "heads": 16,
+    "backbone_layers": 8,
+    "coord_bins": 512,
+    "dropout": 0
+  },
+  "enums": {
+    "Click": [
+      "0",
+      "2",
+      "2017",
+      "5",
+      "BACKSPACE",
+      "Backspace",
+      "Director",
+      "Enter",
+      "Next",
+      "None",
+      "SEARCH",
+      "Search"
+    ],
+    "LongPress": [
+      "None"
+    ],
+    "Scroll": [
+      "down",
+      "up"
+    ],
+    "Swipe": [
+      "down",
+      "left",
+      "up"
+    ],
+    "KeyboardPress": [
+      "Enter"
+    ],
+    "NavigateBack": [
+      "None"
+    ],
+    "NavigateHome": [
+      "None"
+    ],
+    "Wait": [
+      "2s"
+    ],
+    "Terminate": [
+      "fail",
+      "failed",
+      "success"
+    ]
+  },
+  "v22_teacher_forcing_ratio": 0.5,
+  "stages": {
+    "warmup": {
+      "epochs": 1,
+      "total_steps": 2545,
+      "lr": 0.0003,
+      "base_frozen": true
+    },
+    "joint": {
+      "epochs": 2,
+      "total_steps": 5308,
+      "lr": 0.0001,
+      "base_frozen": false
+    }
+  },
+  "weight_decay": 0.01,
+  "lora_lr": 1e-06,
+  "latent_lr": 1e-06,
+  "lm_weight": 1.0,
+  "alignment_weight": 0.1,
+  "ranking_weight": 0.2,
+  "training": {
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0,
+    "lora_use_rslora": true,
+    "max_sequence_tokens": 24576,
+    "model": "Qwen/Qwen3-VL-8B-Instruct",
+    "image_min_pixels": 4096,
+    "image_max_pixels": 16777216,
+    "attention": "sdpa"
+  }
+}
