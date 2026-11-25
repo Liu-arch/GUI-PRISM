@@ -4,7 +4,7 @@
 
 GUI-PRISM predicts structured action fields with dependent queries and gated residual cross-attention, while generating open-ended text values with the language model.
 
-[Model weights](https://huggingface.co/L1007555652/GUI-PRISM)
+[Paper](https://arxiv.org/abs/2611.32097) | [Model weights](https://huggingface.co/L1007555652/GUI-PRISM)
 
 ## Setup
 
